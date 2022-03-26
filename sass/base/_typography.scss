@@ -1,0 +1,64 @@
+@use "../abstracts/index" as a;
+
+body {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 1.6rem; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+}
+.heading-primary {
+  color: a.$color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 4rem;
+    letter-spacing: 3.5rem;
+    /* adding an animation to an elemnt */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    // animation-delay: 2s;
+    /* animation-iteration-count: 2; */
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
