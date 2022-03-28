@@ -1,0 +1,26 @@
+@use "../abstracts/index" as *;
+.row {
+  width: 100%;
+  max-width: 114rem;
+  // background-color: $color-grey-light-1;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__text {
+    flex: 0 0 45%;
+  }
+
+  &__images {
+    flex: 0 0 45%;
+  }
+
+  &__features {
+    flex: 0 0 20%;
+  }
+
+  &__card {
+    flex: 0 0 30%;
+  }
+}
