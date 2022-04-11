@@ -1,3 +1,5 @@
+@use '../abstracts/index' as *;
+
 *,
 *::after,
 *::before {
@@ -6,9 +8,25 @@
   box-sizing: inherit;
 }
 html {
-  /* font-size: 10px; ... defones what 1 rem is */
-  font-size: 62.5%;
+  /* font-size: 10px; ... defines what 1 rem is */
+  font-size: 62.5%; 
+
+  @include respond(tabl) {
+    font-size: 56.25%; //1rem = 9px... 9/16*100
+  }
+  @include respond(tabp) {
+    font-size: 50%; // 1rem = 8px... 8px/16px *100
+  }
+  @include respond(big) {
+    font-size: 75%; //1rem = 12
+  }
 }
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tabp) {
+    padding: 0;
+  }
+
 }

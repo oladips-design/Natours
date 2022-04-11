@@ -8,6 +8,19 @@
   display: flex;
   justify-content: space-between;
 
+
+  
+  @include respond(tabp) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // margin-bottom: 4rem;
+    max-width: 50rem;
+    gap: 7rem;
+
+    padding: 0 3rem;
+  }
+
   &__text {
     flex: 0 0 45%;
   }
@@ -18,9 +31,30 @@
 
   &__features {
     flex: 0 0 20%;
+    @include respond(tabp) {
+      margin-bottom: 4rem;
+
+    }
   }
 
   &__card {
     flex: 0 0 30%;
   }
+
+  &__this{
+    flex-basis: 60%;
+
+    @include respond(tabp) {
+      flex-basis: 30%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__that{
+    flex-basis: 30%;
+
+  }
+}
+.roow{
+  display: flex;
 }
