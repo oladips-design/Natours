@@ -1,5 +1,6 @@
 @use "../abstracts/index" as *;
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -11,6 +12,10 @@
     position: relative;
     font-size: $default-font-size;
     // color: $color-grey-dark;
+
+    //button element
+    border: none;
+    cursor: pointer;
   }
 
   &::after {
@@ -35,7 +40,9 @@
       opacity: 0;
     }
   }
-  &:active {
+  &:active,
+  &:focus {
+     outline: none;
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }

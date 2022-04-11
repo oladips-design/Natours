@@ -6,13 +6,31 @@
       rgba($color-primary--light, 0.763),
       rgba($color-primary--dark, 0.767)
     ),
-    url(/img/hero.jpg);
-  background-size: cover;
-  background-position: top;
+    url(/img/hero-small.jpg);
+    background-size: cover;
+    background-position: top;
+    
+    /* clip-path: polygon(x y, x y, x y); */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+    
+    @media (min-resolution : 192dpi) and (min-width: 37.5em),
+    (min-width: 125em){
+      background-image: linear-gradient(
+          to left bottom,
+          rgba($color-secondary-light-1, 0.763),
+          rgba($color-secondary-light-2, 0.767)
+        ),
+        url(/img/hero.jpg);
+        
+      }
 
-  /* clip-path: polygon(x y, x y, x y); */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
+  @include respond(tabp) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+  }
 
   &__Logo-box {
     position: absolute;
